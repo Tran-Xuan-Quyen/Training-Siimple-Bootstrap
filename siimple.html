@@ -13,9 +13,10 @@
     <div id="main">
         <div id="header">
             <div class="header-logo">
-                <img src="./assets/img/logo/logo.png" alt="">
+                <a href="https://bootstrapmade.com/"><img src="./assets/img/logo/logo.png" alt=""></a>
+                
             </div>
-            <ul class="devices">
+            <ul class="header-devices">
                 <li><i class="ti-desktop"></i></li>
                 <li><i class="ti-tablet"></i></li>
                 <li><i class="ti-mobile"></i></li>
@@ -33,13 +34,11 @@
             </div>
         </div>
 
-
-
-        <div id="header2">
+        <div id="header-nav" class="js-menu">
             <ul id="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about us">About us</a></li>
-                <li><a href="#why us">Why us</a></li>
+                <li><a href="#" class="js-menu-ele">Home</a></li>
+                <li><a href="#about us" class="js-menu-ele">About us</a></li>
+                <li><a href="#why us" class="js-menu-ele">Why us</a></li>
                 <li><a href="#Drop down">Drop Down <i class="ti-car" style="float: right; padding: 10px 10px !important;"></i></a>
                     <ul class="subnav">
                         <li><a href="#">Drop Down 1</a></li>
@@ -61,7 +60,7 @@
                         <li><a href="#">Drop Down 5</a></li>
                     </ul>
                 </li>
-                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#Contact" class="js-menu-ele">Contact</a></li>
             </ul>
         </div>
 
@@ -69,7 +68,7 @@
         <!-- slider -->
         <div id="slider">
             <div class="slider-section">
-                <header class="slider-header">Siimple <i class="ti-menu"></i></header>
+                <header class="slider-header">Siimple <i class="ti-menu btn-menu js-btn-menu"></i> <i class="ti-close btn-close-menu js-btn-close-menu"></i></header>
                 <div class="slider-desc">
                     <div class="slider-hero">
                         <h2 class="slider-heading">Welcome to Siimple</h2>
@@ -79,7 +78,7 @@
                                 <input type="text" name="" id="" required class="input" placeholder="Your Name">
                                 <input type="email" name="" id=""required class="input" placeholder="Your Email">
                             </div>
-                            <input type="submit" class="btn-notice" value="Notify me!"></input>
+                            <input type="submit" class="btn-notice font-Raleway" value="Notify me!" ></input>
                         </form>
                     </div>
                 </div>
@@ -90,9 +89,11 @@
 
             <!-- Introduction -->
             <div id="about us" class="content-about content-p1 row">
-                <img src="./assets/img/content/about/about-img.jpg" alt="" class="col col-half p1-img">
+                <div class="col col-half p1-img">
+                    <img src="./assets/img/content/about/about-img.jpg" alt="">
+                </div>
                 <div class="col col-half p1-desc">
-                    <header class="p1-desc-header">Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</header>
+                    <header class="p1-desc-header font-Raleway">Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</header>
                     <p class="p1-desc-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <p class="p1-desc-cmp"><i class="ti-check"></i>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <p class="p1-desc-cmp"><i class="ti-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
@@ -201,11 +202,12 @@
             </div>
 
             <!-- Contact -->
-            <div id="Contact" class="content-about content-p2 row content-contact">
-                <div class="col col-full p-heading">
+            <div id="Contact" class="content-about content-p2 row">
+                 <div class="col-full p-heading">
                     <h2 class="p3-ask-heading">Contact us</h2>
-                </div>
-                <div class="contact-body row ">
+                 </div>
+                 <div class="contact-block">
+                <!-- <div class="contact-body "> -->
                     <div class="contact-info">
                         <div class="info">
                             <p>
@@ -236,21 +238,21 @@
                     </div>
 
 
-                    <div class="contact-form" style="float: right">
+                    <div class="contact-form" >
                         <form action="" class="form-desc">
                             <input type="text" name="" id="" class="form" required placeholder="Your Name">
                             <input type="email" name="" id="" class="form" required placeholder="Your Email">
                             <input type="text" name="" id="" class="form" required placeholder="Subject">
                             <div><textarea type="text" name="" id="" class="form"required  style="height: 100px;resize: vertical; overflow: auto; font-family: Arial, Helvetica, sans-serif;" placeholder="Message"></textarea></div>
-                            <div class="form" style="border: none !important; text-align: center; padding-bottom: 40px;">
+                            <div class="form" style="border: none !important; text-align: center;">
                                 <input type="submit" value="Send message" class="btn">
                             </div>
                         </form>
 
                     </div>
                     <div class="clear"></div>
+                <!-- </div> -->
                 </div>
-
              </div>
 
              <!-- footer -->
@@ -261,6 +263,41 @@
             </div>
         </div>
     </div>
+    <script>
+        const menu_elements=document.querySelectorAll('.js-menu-ele')
+        const btn_menu=document.querySelector('.js-btn-menu')
+        const btn_close_menu=document.querySelector('.js-btn-close-menu')
+        const menu=document.querySelector('.js-menu')
+        function showMenu(){
+            menu.classList.remove('close-menu')
+            menu.classList.add('open-menu')  
+        }
+        function swapBtn(){
+            btn_menu.classList.add('close-btn-menu')
+            btn_close_menu.classList.add('open-btn-close')
+            btn_menu.classList.remove('open-btn-menu')
+        }
+        function removeMenu(){
+            menu.classList.add('close-menu')
+            menu.classList.remove('open-menu')
+            // btn_menu.classList.add('open-btn-menu')
+            // btn_close_menu.classList.remove('open-btn-close')
+        }
+        function swapBtn2(){
+            btn_menu.classList.remove('close-btn-menu')
+            btn_close_menu.classList.remove('open-btn-close')
+            btn_menu.classList.add('open-btn-menu')
+        }
+        for(const menu_element of menu_elements)
+        {
+            menu_element.addEventListener('click',removeMenu)
+            menu_element.addEventListener('click',swapBtn2)
+        }
+        btn_menu.addEventListener('click', showMenu)
+        btn_menu.addEventListener('click',swapBtn)
+        btn_close_menu.addEventListener('click',removeMenu)
+        btn_close_menu.addEventListener('click',swapBtn2)
+    </script>
 </body>
 </html>
 
