@@ -5,10 +5,15 @@
     box-sizing: border-box;
 }
 html{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open-Sans',sans-serif;
     scroll-behavior: smooth;
 }
-
+.font-Raleway{
+    font-family: 'Raleway', sans-serif;
+}
+.font-Open{
+    /* font-family: 'Open-Sans',sans-serif; */
+}
 .clear{
     clear: both;
 }
@@ -19,8 +24,9 @@ html{
 }
 .col{
     float: left;
-    margin-left: -3px;
-    margin-right: -3px;
+    margin-left: -8px;
+    margin-right: 3px;
+    padding: 0px 16px;
 }
 .col-half{
     width: 50%;
@@ -54,24 +60,25 @@ html{
     width: 178px;
     height: 25px;
 }
-.devices{
+.header-devices{
     list-style-type: none;
     margin-left: 16px;
+    min-width: 200px;
 }
 
-.devices li{
+.header-devices li{
     float: left;
     font-size: 20px;
     padding: 8px;
     color: #ddd;
     cursor: pointer;
 }
-.devices li:hover{
+.header-devices li:hover{
     opacity: 0.6;
 }
 .header-center{
-    width: 740px;
-    margin-left: 390px;
+    max-width: 740px;
+    margin-left: auto;
     color: #fff;
     font-weight: 800;
     font-size: 15px;
@@ -88,11 +95,12 @@ html{
     opacity: 0.6;
 }
 .header-tail{
+    float: right;
     margin-left: auto;
     font-size: 15px;
     display: block;
-    /* margin-right: 12px; */
-    
+    /* margin-right: 2px; */
+    min-width: calc(100% / 10);
 }
 .header-tail>i{
     color: #ddd;
@@ -119,21 +127,27 @@ html{
     animation-timing-function: 0.5s;
 }
 
-/* header2 */
-#header2{
+/* header-nav */
+#header-nav{
     /* display: none; */
     position: fixed;
     top: 32px;
-    right: 0;
+    right: -260px;
     bottom: 0;
     background-color: rgba(34, 34, 34, 0.8);
     width: 260px;
     padding-top: 20px;
     /* padding: 20px; */
 }
-#header2 #nav{
+#header-nav.open-menu{
+    animation: modeMenuOn ease 0.5s;
+    right: 0;
+    display: block;
 }
-
+ #header-nav.close-menu{
+    animation: modeMenuOff ease 0.5s;
+    right: -260px;
+}
 #nav, .subnav{
     list-style-type: none;
 }
@@ -151,7 +165,6 @@ html{
     position: relative;
     left: 30px;
     display: block;
-   
 }
 #nav>li:hover>a,
 #nav .subnav a:hover{
@@ -160,6 +173,7 @@ html{
 
 /* slider */
 #slider{
+    font-family: 'Raleway', sans-serif;
     margin-top: 32px;
     height: 720px;
     background: url(/assets/img/slider/hero-bg.jpg) top center/ cover no-repeat;
@@ -174,15 +188,42 @@ html{
     font-weight: 200;
 }
 
-.slider-section .slider-header i{
+.slider-section .slider-header .btn-menu{
     position: fixed;
     top: 52px;
-    right: 270px;
+    right: 12px;
     background-color: rgba(34, 34, 34, 0.5);
     font-size: 18px !important;
     padding: 12px 12px 12px 16px;
     cursor: pointer;
     z-index: 1;
+    
+}
+.close-btn-menu{
+    display: none;
+}
+.open-btn-menu{
+    display: block;
+    animation: modeShowBtnOn ease 0.5s;
+}
+.btn-close-menu{
+    display: none;
+    position: fixed;
+    top: 52px;
+    right: 272px;
+    background-color: rgba(34, 34, 34, 0.5);
+    font-size: 18px !important;
+    padding: 12px 12px 12px 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+.open-btn-close{
+    display: block;
+    animation: modeShowBtnCloseOn ease 0.5s;
+}
+.btn-animation{
+    /* animation: modeHideon ease 0.5s; */
+    /* right: 200px !important; */
 }
 .slider-section .slider-desc{
     margin-top: 170px;
@@ -198,6 +239,7 @@ html{
     font-size: 48px;
     font-weight: lighter;
     display: inline-block;
+    font-family: 'Raleway', sans-serif;
 }
 .slider-hero .slider-sub-heading{
     margin-top: 15px;
@@ -230,7 +272,7 @@ html{
     background-color: #fd8841;
 }
 .content-about{
-    padding: 20px 290px;
+    padding: 20px calc(100% / 7);
     min-height: 200px; 
 }
 .content-p1{
@@ -238,13 +280,14 @@ html{
     width: 100%;
 }
 .p1-img{
-    width: 550px;
-    height: 410px; 
+    /* width: 100%; */
     padding: 8px;
     display: inline-block;
     margin-right: 15px !important;
-    margin-left: -10px;
-    
+    margin-left: -10px; 
+}
+.p1-img img{
+    width: 100%;
 }
 .p1-desc{
     line-height: 1.4;
@@ -265,6 +308,7 @@ html{
     color: #444;
     margin-top: 16px;
     letter-spacing: 0.2px;
+    font-family: 'Open-Sans',sans-serif;
 }
 .p1-desc-cmp i{
     margin-right: 8px;
@@ -274,6 +318,7 @@ html{
 .p1-footer{
     margin-top: 32px;
     text-align: justify;
+    color: #444;
 }
 
 .content-p2{
@@ -283,8 +328,9 @@ html{
     
 }
 .p2-img{
-    width: 420px;
-    height: 280px;
+    /* width: 420px;
+    height: 280px; */
+    width: 100%;
     display: block;
     border-radius: 5px;
 }
@@ -316,10 +362,14 @@ html{
 }
 .p2-desc-mission{
     background-color: #fff;
-    width: 421px;
-    height: 250px;
+    /* width: 421px;
+    height: 250px; */
+    min-height: 250px;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     padding: 12px;
+    color: #5e5e5e;
+    font-family: 'Open-Sans',sans-serif;
 }
 .p2-desc .icon{
     margin-top: -40px;
@@ -366,12 +416,6 @@ html{
     bottom: 0;
     left: calc(50% - 40px);
 }
-
-
-.content-contact{
-    min-height: 600px!important;
-    padding-bottom: 200px !important;
-}
 .p3-ask-list{
     display: block;
     list-style-type: none;
@@ -408,12 +452,16 @@ html{
     margin-top: 50px;
     position: relative;
 }
+.contact-block{
+    display: flex;
+    justify-content: center;
+}
 .contact-info{
     /* display: flex;
     justify-content: center;
     align-items: center; */
     /* text-align: center; */
-    margin-left: 250px;
+    /* margin-left: 250px; */
     width: 25%;
     display: inline-block;
 }
@@ -449,9 +497,9 @@ html{
 }
 .contact-form{
     width: 526px;
-    position: absolute;
+    /* position: absolute;
     top: 80px;
-    right: 216px;
+    right: 216px; */
 }
 .form{
     width: 100%;
@@ -499,4 +547,50 @@ html{
 #footer .link{
     text-decoration: none;
     color: #fd680e;
+}
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(/assets/font/font-letter/Raleway/Raleway-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Open-Sans';
+    src: url(/assets/font/font-letter/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+@keyframes modeShowBtnCloseOn {
+    from{
+        right: 12px;
+        opacity: 1;
+    }
+    to{
+       right: calc(260px + 12px);
+        opacity: 1;
+    }
+}
+@keyframes modeShowBtnOn {
+    from{
+        right: calc(260px + 12px);
+    }
+    to{
+        right: 12px;
+    }
+    
+}
+@keyframes modeMenuOn {
+    from{
+        right: -260px;
+    }
+    to{
+        right: 0;
+    }
+}
+@keyframes modeMenuOff {
+    from{
+        right: 0;
+    }
+    to{
+        right: -260px;
+    }
 }
