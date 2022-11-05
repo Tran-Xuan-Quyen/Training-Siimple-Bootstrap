@@ -273,33 +273,45 @@
         const btn_menu=document.querySelector('.js-btn-menu')
         const btn_close_menu=document.querySelector('.js-btn-close-menu')
         const menu=document.querySelector('.js-menu')
+        // hien thi menu 
         function showMenu(){
             menu.classList.remove('close-menu')
             menu.classList.add('open-menu')  
         }
+
+        // thay doi nut bam tu btn-menu sang btn-close-menu
         function swapBtn(){
             btn_menu.classList.add('close-btn-menu')
             btn_close_menu.classList.add('open-btn-close')
             btn_menu.classList.remove('open-btn-menu')
         }
+
+        // dong menu
         function removeMenu(){
             menu.classList.add('close-menu')
             menu.classList.remove('open-menu')
             // btn_menu.classList.add('open-btn-menu')
             // btn_close_menu.classList.remove('open-btn-close')
         }
+
+        // thay doi nut bam tu btn-close-menu sang btn-menu
         function swapBtn2(){
             btn_menu.classList.remove('close-btn-menu')
             btn_close_menu.classList.remove('open-btn-close')
             btn_menu.classList.add('open-btn-menu')
         }
+
+        //tat ca cac phan tu trong menu sau khi click deu add cac ham remove va swapbtn
         for(const menu_element of menu_elements)
         {
             menu_element.addEventListener('click',removeMenu)
             menu_element.addEventListener('click',swapBtn2)
         }
+
+        // btn-menu khi dc click thi hien thi menu va swapbtn
         btn_menu.addEventListener('click', showMenu)
         btn_menu.addEventListener('click',swapBtn)
+        //btn-close-menu khi dc click thi dong menu va swapbtn2
         btn_close_menu.addEventListener('click',removeMenu)
         btn_close_menu.addEventListener('click',swapBtn2)
     </script>
