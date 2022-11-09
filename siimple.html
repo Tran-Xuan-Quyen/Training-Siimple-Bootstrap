@@ -11,8 +11,6 @@
 </head>
 <body>
     <div id="main">
-
-        <!-- header -->
         <div id="header">
             <div class="header-logo">
                 <a href="https://bootstrapmade.com/"><img src="./assets/img/logo/logo.png" alt=""></a>
@@ -36,8 +34,7 @@
             </div>
         </div>
 
-        <!-- header-menu -->
-        <div id="header-nav" class="js-menu">
+        <div id="header-nav" class="js-menu close-menu">
             <ul id="nav">
                 <li><a href="#" class="js-menu-ele">Home</a></li>
                 <li><a href="#about us" class="js-menu-ele">About us</a></li>
@@ -71,7 +68,11 @@
         <!-- slider -->
         <div id="slider">
             <div class="slider-section">
-                <header class="slider-header">Siimple <i class="ti-menu btn-menu js-btn-menu"></i> <i class="ti-close btn-close-menu js-btn-close-menu"></i></header>
+                <header class="slider-header">
+                     Siimple
+                     <button onclick="toggleNav()" class="ti-menu btn-menu js-btn-menu open-btn-menu"></button> 
+                     <!-- <i class="ti-close btn-close-menu js-btn-close-menu"></i> -->
+                    </header>
                 <div class="slider-desc">
                     <div class="slider-hero">
                         <h2 class="slider-heading">Welcome to Siimple</h2>
@@ -88,8 +89,6 @@
             </div>
             <div class="clear"></div>
         </div>
-    
-    <!-- content      -->
         <div id="content">
 
             <!-- Introduction -->
@@ -242,7 +241,7 @@
                         </div>
                     </div>
 
-                    <!-- contact-form -->
+
                     <div class="contact-form" >
                         <form action="" class="form-desc">
                             <input type="text" name="" id="" class="form" required placeholder="Your Name">
@@ -273,47 +272,35 @@
         const btn_menu=document.querySelector('.js-btn-menu')
         const btn_close_menu=document.querySelector('.js-btn-close-menu')
         const menu=document.querySelector('.js-menu')
-        // hien thi menu 
-        function showMenu(){
-            menu.classList.remove('close-menu')
-            menu.classList.add('open-menu')  
-        }
-
-        // thay doi nut bam tu btn-menu sang btn-close-menu
-        function swapBtn(){
-            btn_menu.classList.add('close-btn-menu')
-            btn_close_menu.classList.add('open-btn-close')
-            btn_menu.classList.remove('open-btn-menu')
-        }
-
+     
         // dong menu
         function removeMenu(){
             menu.classList.add('close-menu')
             menu.classList.remove('open-menu')
-            // btn_menu.classList.add('open-btn-menu')
-            // btn_close_menu.classList.remove('open-btn-close')
         }
-
         // thay doi nut bam tu btn-close-menu sang btn-menu
         function swapBtn2(){
-            btn_menu.classList.remove('close-btn-menu')
-            btn_close_menu.classList.remove('open-btn-close')
+            btn_menu.classList.remove('ti-close')
+            btn_menu.classList.add('ti-menu')
+            btn_menu.classList.remove('open-btn-close')
             btn_menu.classList.add('open-btn-menu')
         }
-
-        //tat ca cac phan tu trong menu sau khi click deu add cac ham remove va swapbtn
+        ///ham chinh
+        function toggleNav(){
+            menu.classList.toggle('open-menu')
+            menu.classList.toggle('close-menu')
+            btn_menu.classList.toggle('ti-close')
+            btn_menu.classList.toggle('ti-menu')
+            btn_menu.classList.toggle('open-btn-close')
+            btn_menu.classList.toggle('open-btn-menu')
+        }
+        ///tat ca cac phan tu trong menu sau khi click deu add cac ham remove va swapbtn
         for(const menu_element of menu_elements)
         {
             menu_element.addEventListener('click',removeMenu)
             menu_element.addEventListener('click',swapBtn2)
         }
-
-        // btn-menu khi dc click thi hien thi menu va swapbtn
-        btn_menu.addEventListener('click', showMenu)
-        btn_menu.addEventListener('click',swapBtn)
-        //btn-close-menu khi dc click thi dong menu va swapbtn2
-        btn_close_menu.addEventListener('click',removeMenu)
-        btn_close_menu.addEventListener('click',swapBtn2)
+        
     </script>
 </body>
 </html>
@@ -344,11 +331,37 @@
 
 
 
+<script>
 
+// // hien thi menu 
+// function showMenu(){
+//     menu.classList.remove('close-menu')
+//     menu.classList.add('open-menu')  
+// }
 
+// // thay doi nut bam tu btn-menu sang btn-close-menu
+// function swapBtn(){
+//     btn_menu.classList.add('close-btn-menu')
+//     btn_close_menu.classList.add('open-btn-close')
+//     btn_menu.classList.remove('open-btn-menu')
+// }
 
+// // dong menu
+// function removeMenu(){
+//     menu.classList.add('close-menu')
+//     menu.classList.remove('open-menu')
+//     // btn_menu.classList.add('open-btn-menu')
+//     // btn_close_menu.classList.remove('open-btn-close')
+// }
 
+// // thay doi nut bam tu btn-close-menu sang btn-menu
+// function swapBtn2(){
+//     btn_menu.classList.remove('close-btn-menu')
+//     btn_close_menu.classList.remove('open-btn-close')
+//     btn_menu.classList.add('open-btn-menu')
+// }
 
+</script>
 
 
 <!-- map -->

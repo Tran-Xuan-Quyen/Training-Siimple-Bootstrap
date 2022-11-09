@@ -11,13 +11,9 @@ html{
 .font-Raleway{
     font-family: 'Raleway', sans-serif;
 }
-.font-Open{
-    /* font-family: 'Open-Sans',sans-serif; */
-}
 .clear{
     clear: both;
 }
-
 .row{
     padding-top: 80px !important;
     padding-bottom: 80px !important;
@@ -140,9 +136,14 @@ html{
     /* padding: 20px; */
 }
 #header-nav.open-menu{
-    animation: modeMenuOn ease 0.5s;
-    right: 0;
-    display: block;
+    /* animation: modeMenuOn ease 0.5s; */
+    transition: 0.5s;
+    right: 0 ;
+    /* transform: translateX(100%); */
+}
+#header-nav.close-menu{
+    transition: 0.5s;
+    right: -260px ;
 }
  #header-nav.close-menu{
     animation: modeMenuOff ease 0.5s;
@@ -199,12 +200,11 @@ html{
     z-index: 1;
     
 }
-.close-btn-menu{
-    display: none;
-}
 .open-btn-menu{
-    display: block;
-    animation: modeShowBtnOn ease 0.5s;
+    /* display: block; */
+    /* animation: modeShowBtnOn ease 0.5s; */
+    transition: 0.5s;
+    right: 12px !important;
 }
 .btn-close-menu{
     display: none;
@@ -218,12 +218,10 @@ html{
     z-index: 1;
 }
 .open-btn-close{
-    display: block;
-    animation: modeShowBtnCloseOn ease 0.5s;
-}
-.btn-animation{
-    /* animation: modeHideon ease 0.5s; */
-    /* right: 200px !important; */
+    /* display: block; */
+    /* animation: modeShowBtnCloseOn ease 0.5s; */
+    transition: 0.5s;
+    right: 272px !important;
 }
 .slider-section .slider-desc{
     margin-top: 170px;
